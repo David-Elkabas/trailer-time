@@ -30,7 +30,7 @@ export default function IconLabelTabs() {
         value={value}
         onChange={handleChange}
         aria-label="icon label tabs example"
-        textColor="secondary"
+        textColor="primary"
         indicatorColor="secondary"
       >
         <Tab icon={<WhatshotIcon />} label="Trending" />
@@ -41,52 +41,3 @@ export default function IconLabelTabs() {
     </div>
   );
 }
-// function handleClick(event) {
-//   event.preventDefault();
-//   console.info("You clicked a breadcrumb.");
-// }
-
-// export default function IconBreadcrumbs() {
-//   return (
-//     <div role="presentation" onClick={handleClick} className={Styles.navbar}>
-//       <Breadcrumbs aria-label="breadcrumb">
-//         <Link
-//           underline="hover"
-//           sx={{ display: "flex", alignItems: "center" }}
-//           color="inherit"
-//           to="/"
-//         >
-//           <WhatshotIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-//           Trending
-//         </Link>
-//         <Link
-//           underline="hover"
-//           sx={{ display: "flex", alignItems: "center" }}
-//           color="inherit"
-//           href="#movies"
-//         >
-//           <MovieIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-//           Movies
-//         </Link>
-//         <Link
-//           underline="hover"
-//           sx={{ display: "flex", alignItems: "center" }}
-//           color="inherit"
-//           to="/series"
-//         >
-//           <TvIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-//           TV series
-//         </Link>
-//         <Link
-//           underline="hover"
-//           sx={{ display: "flex", alignItems: "center" }}
-//           color="inherit"
-//           to="/search"
-//         >
-//           <SearchIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-//           Search
-//         </Link>
-//       </Breadcrumbs>
-//     </div>
-//   );
-// }

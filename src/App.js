@@ -6,6 +6,7 @@ import Movies from "./pages/Movies/Movies";
 import Search from "./pages/Search/Search";
 import Series from "./pages/Series/Series";
 import "./App.css";
+
 function App() {
   return (
     <>
