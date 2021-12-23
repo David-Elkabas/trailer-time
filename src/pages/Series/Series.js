@@ -1,5 +1,9 @@
 const Series = () => {
-  return <div>Series</div>;
+  return (
+    <div>
+      <h1 className="pageHeading">TV Series</h1>
+    </div>
+  );
 };
 
 export default Series;

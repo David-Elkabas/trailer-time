@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import PageNumber from "../../components/PageNumber/PageNumber";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import Style from "./Trending.module.css";
 const Trending = () => {
   const [contents, setContents] = useState([]);
+  const [page, setPage] = useState(1);
 
   const fetchTrending = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}`
+      `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
     );
     setContents(data.results);
   };
@@ -17,7 +19,7 @@ const Trending = () => {
 
   return (
     <div>
-      <h1>Trending</h1>
+      <h1 className="pageHeading">Trending</h1>
       <div className={Style.trending}>
         {contents &&
           contents.map((content) => (
@@ -32,6 +34,7 @@ const Trending = () => {
             />
           ))}
       </div>
+      <PageNumber />
     </div>
   );
 };

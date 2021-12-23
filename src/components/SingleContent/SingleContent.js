@@ -1,10 +1,16 @@
+import Badge from "@mui/material/Badge";
 import { img_300, unavailable } from "../../config/config";
 import Styles from "./SingleContent.module.css";
+
 const SingleContent = (props) => {
   const { id, poster, title, date, media_type, vote_average } = props;
 
   return (
     <div className={Styles.post}>
+      <Badge
+        badgeContent={vote_average}
+        color={vote_average > 7.5 ? "primary" : "warning"}
+      ></Badge>
       <img
         className={Styles.image}
         src={poster ? `${img_300}/${poster}` : unavailable}

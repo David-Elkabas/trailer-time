@@ -9,7 +9,13 @@
   z-index: 100;
   color: white;
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-color: rgb(201, 149, 149);
+  background-image: linear-gradient(
+    to top,
+    rgb(214, 215, 221),
+    rgb(97, 96, 96)
+  );
+
+  /* background-color: rgb(201, 149, 149); */
 }
 
 @media (max-width: 1000px) {

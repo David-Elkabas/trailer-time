@@ -8,6 +8,17 @@ import MovieIcon from "@mui/icons-material/Movie";
 import TvIcon from "@mui/icons-material/Tv";
 import Styles from "./NavBar.module.css";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@material-ui/core";
+
+import { green } from "@mui/material/colors";
+import { createTheme, ThemeProvider } from "@material-ui/core";
+
+const theme = createTheme({
+  palette: {
+    primary: green,
+    secondary: green,
+  },
+});
 
 export default function IconLabelTabs() {
   const [value, setValue] = React.useState(0);
@@ -25,19 +36,22 @@ export default function IconLabelTabs() {
   }, [value, navigate]);
 
   return (
-    <div className={Styles.navbar}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        aria-label="icon label tabs example"
-        textColor="primary"
-        indicatorColor="secondary"
-      >
-        <Tab icon={<WhatshotIcon />} label="Trending" />
-        <Tab icon={<MovieIcon />} label="Movies" />
-        <Tab icon={<TvIcon />} label="TV series" />
-        <Tab icon={<SearchIcon />} label="Search" />
-      </Tabs>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className={Styles.navbar}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          TabIndicatorProps={{
+            style: { backgroundColor: "goldenrod" },
+          }}
+          textColor="inherit"
+        >
+          <Tab icon={<WhatshotIcon />} label="Trending" />
+          <Tab icon={<MovieIcon />} label="Movies" />
+          <Tab icon={<TvIcon />} label="TV series" />
+          <Tab icon={<SearchIcon />} label="Search" />
+        </Tabs>
+      </div>
+    </ThemeProvider>
   );
 }

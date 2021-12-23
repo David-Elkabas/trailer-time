@@ -10,7 +10,11 @@
   position: relative;
 }
 .post:hover {
-  background-color: goldenrod;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255, 230, 8),
+    rgb(44, 58, 255)
+  );
   color: black;
 }
 
