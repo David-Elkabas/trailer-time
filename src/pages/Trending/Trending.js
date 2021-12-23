@@ -15,7 +15,7 @@ const Trending = () => {
   };
   useEffect(() => {
     fetchTrending();
-  }, []);
+  }, [page]);
 
   return (
     <div>
@@ -34,7 +34,7 @@ const Trending = () => {
             />
           ))}
       </div>
-      <PageNumber />
+      <PageNumber setPage={setPage} />
     </div>
   );
 };
