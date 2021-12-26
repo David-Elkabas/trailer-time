@@ -5,15 +5,11 @@
   display: flex;
   justify-content: center;
   font-size: 5vw;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   z-index: 100;
   color: white;
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-image: linear-gradient(
-    to top,
-    rgb(214, 215, 221),
-    rgb(97, 96, 96)
-  );
+  background-image: linear-gradient(to bottom, rgb(205, 233, 46), rgb(0, 0, 0));
 
   /* background-color: rgb(201, 149, 149); */
 }

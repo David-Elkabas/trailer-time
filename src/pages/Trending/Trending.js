@@ -20,6 +20,8 @@ const Trending = () => {
   return (
     <div>
       <h1 className="pageHeading">Trending</h1>
+      <PageNumber setPage={setPage} pageNumber={page} numberOfPages={10} />
+
       <div className={Style.trending}>
         {contents &&
           contents.map((content) => (
@@ -34,7 +36,7 @@ const Trending = () => {
             />
           ))}
       </div>
-      <PageNumber setPage={setPage} />
+      <PageNumber setPage={setPage} pageNumber={page} numberOfPages={10} />
     </div>
   );
 };

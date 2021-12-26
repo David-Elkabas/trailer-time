@@ -12,8 +12,8 @@
 .post:hover {
   background-image: linear-gradient(
     to bottom,
-    rgb(255, 230, 8),
-    rgb(44, 58, 255)
+    rgb(214, 193, 4),
+    rgb(255, 255, 255)
   );
   color: black;
 }

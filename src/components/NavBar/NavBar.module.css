@@ -4,8 +4,8 @@
   display: flex;
   justify-content: center;
   font-size: 3vw;
+  padding-top: 60px;
   padding-bottom: 15px;
-  padding-top: 15px;
 }
 
 @media (max-width: 1000px) {
