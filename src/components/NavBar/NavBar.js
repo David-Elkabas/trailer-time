@@ -8,8 +8,6 @@ import MovieIcon from "@mui/icons-material/Movie";
 import TvIcon from "@mui/icons-material/Tv";
 import Styles from "./NavBar.module.css";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@material-ui/core";
-
 import { green } from "@mui/material/colors";
 import { createTheme, ThemeProvider } from "@material-ui/core";
 

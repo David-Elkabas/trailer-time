@@ -14,14 +14,14 @@ const Movies = () => {
     selectedGenres: [],
   });
 
-  const fetchMovies = async () => {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
-    );
-    setContents(data.results);
-    setNumberOfPages(data.total_pages);
-  };
   useEffect(() => {
+    const fetchMovies = async () => {
+      const { data } = await axios.get(
+        `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
+      );
+      setContents(data.results);
+      setNumberOfPages(data.total_pages);
+    };
     fetchMovies();
   }, [page]);
 
