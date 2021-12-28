@@ -15,15 +15,22 @@ const Movies = () => {
   });
 
   useEffect(() => {
-    const fetchMovies = async () => {
+    const getGenreForURL = () => {
+      if (genres.selectedGenres.length < 1) return "";
+
+      const GenreIds = genres.selectedGenres.map((g) => g.id);
+      return GenreIds.reduce((acc, curr) => acc + "," + curr);
+    };
+    const fetchMovies = async (genresForURL) => {
       const { data } = await axios.get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
+        `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genresForURL}`
       );
       setContents(data.results);
       setNumberOfPages(data.total_pages);
     };
-    fetchMovies();
-  }, [page]);
+    const genresForURL = getGenreForURL();
+    fetchMovies(genresForURL);
+  }, [page, genres.selectedGenres]);
 
   return (
     <div>
