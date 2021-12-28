@@ -1,7 +1,9 @@
+import PageComponent from "../../components/PageComponent/PageComponent";
+
 const Series = () => {
   return (
     <div>
-      <h1 className="pageHeading">TV Series</h1>
+      <PageComponent pageName="tv" pageTitle="tv series" />
     </div>
   );
 };
