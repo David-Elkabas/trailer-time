@@ -1,4 +1,3 @@
-import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
@@ -8,7 +7,9 @@ import Paper from "@mui/material/Paper";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Draggable from "react-draggable";
-import { img_500, unavailableLandscape } from "../../config/config";
+import ContentDialogBody from "../ContentDialogBody/ContentDialogBody";
+import ContentDialogFooter from "../ContentDialogFooter/ContentDialogFooter";
+import DialogTitleComp from "../ContentDialogTitle/ContentDialogTitle";
 import Style from "./ContentDialog.module.css";
 
 function PaperComponent(props) {
@@ -23,7 +24,7 @@ function PaperComponent(props) {
 }
 
 const ContentDialog = (props) => {
-  const { open, handleClose, id, media_type } = props;
+  const { open, handleClose, id, media_type, openYoutubeVideo } = props;
   const [content, setContent] = useState();
   const [video, setVideo] = useState();
 
@@ -57,58 +58,30 @@ const ContentDialog = (props) => {
       >
         <DialogTitle id="draggable-dialog-title">
           {content && (
-            <div className={Style.dialog_title}>
-              <div>
-                <span>{content.name || content.title} </span>
-                <span>
-                  ({content.first_air_date || content.release_date || "-----"})
-                </span>
-              </div>
-              <div>
-                <span
-                  className={` ${Style.vote_average} 
-                  ${
-                    content.vote_average > 7.5
-                      ? Style.good_vote_average
-                      : Style.just_vote_average
-                  }`}
-                >
-                  {content.vote_average}
-                </span>
-              </div>
-            </div>
+            <DialogTitleComp
+              contentName={content.name || content.title}
+              date={content.first_air_date || content.release_date || "-----"}
+              vote_average={content.vote_average}
+            />
           )}
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
             {content && (
-              <div>
-                <div className={Style.tagline}>
-                  {content.tagline && <i>{content.tagline}</i>}
-                </div>
-                <div>
-                  <img
-                    className={Style.poster_image}
-                    src={
-                      content.backdrop_path
-                        ? `${img_500}/${content.backdrop_path}`
-                        : unavailableLandscape
-                    }
-                    alt={content.name || content.title}
-                  />
-                  <div>
-                    <span>{content.overview}</span>
-                  </div>
-                </div>
-              </div>
+              <ContentDialogBody
+                tagline={content.tagline || "no tagline was given"}
+                poster={content.backdrop_path}
+                contentName={content.name || content.title}
+                description={content.overview || "no description was given"}
+              />
             )}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Cancel
-          </Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+          <ContentDialogFooter
+            openYoutubeVideo={openYoutubeVideo}
+            handleClose={handleClose}
+          />
         </DialogActions>
       </Dialog>
     </div>

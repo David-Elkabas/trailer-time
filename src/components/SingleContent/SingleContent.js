@@ -12,8 +12,13 @@ const SingleContent = (props) => {
   const ClickOpenDialog = () => {
     setIsDialogOpen(true);
   };
+
   const handleCloseDialog = () => {
     setIsDialogOpen(false);
+  };
+  const openYoutubeVideo = () => {
+    setIsDialogOpen(false);
+    console.log("open fucking youtube");
   };
   return (
     <>
@@ -38,6 +43,7 @@ const SingleContent = (props) => {
         handleClose={handleCloseDialog}
         id={id}
         media_type={media_type}
+        openYoutubeVideo={openYoutubeVideo}
       />
     </>
   );

@@ -1,0 +1,19 @@
+.dialog_title {
+  display: flex;
+  cursor: move;
+  width: 100%;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.vote_average {
+  color: white;
+  padding: 4px 6px;
+  border-radius: 45%;
+  font-weight: 400;
+}
+.good_vote_average {
+  background-color: #1976d2;
+}
+.just_vote_average {
+  background-color: #ed6c02;
+}

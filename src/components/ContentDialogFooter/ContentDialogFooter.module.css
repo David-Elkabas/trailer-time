@@ -1,0 +1,12 @@
+.buttons {
+  display: flex;
+  /* flex-direction: row; */
+  /* justify-content: left; */
+  /* position: relative; */
+}
+/* .youtube_button {
+  align-self: left;
+}
+.exit_button {
+  justify-self: right;
+} */
