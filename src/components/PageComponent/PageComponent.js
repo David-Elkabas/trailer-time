@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Genres from "../../components/Genres/Genres";
 import PageNumber from "../../components/PageNumber/PageNumber";
 import SingleContent from "../../components/SingleContent/SingleContent";
-import Style from "./PageComponent.module.css";
+import Styles from "./PageComponent.module.css";
 import axios from "axios";
 
 const PageComponent = (props) => {
@@ -56,7 +56,7 @@ const PageComponent = (props) => {
         />
       )}
 
-      <div className={Style.content}>
+      <div className={Styles.content}>
         {contents &&
           contents.map((content) => (
             <SingleContent

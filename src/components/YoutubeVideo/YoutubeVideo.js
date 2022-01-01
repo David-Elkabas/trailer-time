@@ -17,9 +17,9 @@ function PaperComponent(props) {
 }
 
 const YoutubeVideo = (props) => {
-  const { open, handleClose, youtubeVideoURl } = props;
+  const { open, handleClose, youtubeURL } = props;
 
-  console.log(youtubeVideoURl);
+  console.log(youtubeURL);
 
   return (
     <div>
@@ -31,7 +31,7 @@ const YoutubeVideo = (props) => {
       >
         <DialogTitle id="draggable-dialog-title">Youtube video</DialogTitle>
         <DialogContent>
-          <DialogContentText> this is the {youtubeVideoURl}</DialogContentText>
+          <DialogContentText> this is the {youtubeURL}</DialogContentText>
         </DialogContent>
       </Dialog>
     </div>

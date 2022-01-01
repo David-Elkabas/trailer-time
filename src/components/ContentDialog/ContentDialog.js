@@ -10,7 +10,6 @@ import Draggable from "react-draggable";
 import ContentDialogBody from "../ContentDialogBody/ContentDialogBody";
 import ContentDialogFooter from "../ContentDialogFooter/ContentDialogFooter";
 import DialogTitleComp from "../ContentDialogTitle/ContentDialogTitle";
-import Style from "./ContentDialog.module.css";
 
 function PaperComponent(props) {
   return (

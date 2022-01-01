@@ -1,20 +1,20 @@
-import Style from "./ContentDialogTitle.module.css";
+import Styles from "./ContentDialogTitle.module.css";
 const DialogTitleComp = (props) => {
   const { contentName, date, vote_average } = props;
   return (
     <div>
-      <div className={Style.dialog_title}>
+      <div className={Styles.dialog_title}>
         <div>
           <span>{contentName} </span>
           <span>({date})</span>
         </div>
         <div>
           <span
-            className={` ${Style.vote_average} 
+            className={` ${Styles.vote_average} 
                   ${
                     vote_average > 7.5
-                      ? Style.good_vote_average
-                      : Style.just_vote_average
+                      ? Styles.good_vote_average
+                      : Styles.just_vote_average
                   }`}
           >
             {vote_average}
