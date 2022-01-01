@@ -46,7 +46,7 @@ const ContentDialog = (props) => {
 
     fetchContentData();
     fetchContentVideo();
-  }, []);
+  }, [media_type, id]);
 
   return (
     <div>
@@ -77,11 +77,21 @@ const ContentDialog = (props) => {
             )}
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <ContentDialogFooter
-            openYoutubeVideo={openYoutubeVideo}
-            handleClose={handleClose}
-          />
+        <DialogActions
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "row",
+          }}
+        >
+          {content && (
+            <ContentDialogFooter
+              openYoutubeVideo={openYoutubeVideo}
+              handleClose={handleClose}
+              openContentHomepage={content.homepage}
+              media_type={media_type}
+            />
+          )}
         </DialogActions>
       </Dialog>
     </div>

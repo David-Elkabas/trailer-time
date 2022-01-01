@@ -1,12 +1,3 @@
 .buttons {
-  display: flex;
-  /* flex-direction: row; */
-  /* justify-content: left; */
-  /* position: relative; */
+  margin: 5px !important;
 }
-/* .youtube_button {
-  align-self: left;
-}
-.exit_button {
-  justify-self: right;
-} */
