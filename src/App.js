@@ -3,7 +3,6 @@ import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Trending from "./pages/Trending/Trending";
 import Movies from "./pages/Movies/Movies";
-import Search from "./pages/Search/Search";
 import Series from "./pages/Series/Series";
 import "./App.css";
 
@@ -16,11 +15,11 @@ function App() {
         <div>
           <BrowserRouter>
             <NavBar />
+
             <Routes>
               <Route path="/" element={<Trending />} />
               <Route path="/trending" element={<Trending />} />
               <Route path="/movies" element={<Movies />} />
-              <Route path="/search" element={<Search />} />
               <Route path="/series" element={<Series />} />
             </Routes>
           </BrowserRouter>

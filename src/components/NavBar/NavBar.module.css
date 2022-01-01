@@ -10,7 +10,13 @@
 
 @media (max-width: 1000px) {
   .navbar {
-    padding-top: 15px;
     font-size: 4vw;
+    padding-top: 80px;
+  }
+}
+@media (max-width: 500px) {
+  .navbar {
+    font-size: 4vw;
+    padding-top: 40px;
   }
 }
