@@ -24,6 +24,7 @@ const YoutubeVideo = (props) => {
 
   const opts = {
     width: "100%",
+    host: "https://www.youtube.com",
     height: "400",
     playerVars: {
       autoplay: 1,
@@ -32,6 +33,7 @@ const YoutubeVideo = (props) => {
   return (
     <div>
       <Dialog
+        component="span"
         fullWidth={true}
         maxWidth="md"
         open={open}
@@ -45,7 +47,7 @@ const YoutubeVideo = (props) => {
         PaperComponent={PaperComponent}
         aria-labelledby="draggable-dialog-title"
       >
-        <DialogTitle id="draggable-dialog-title">
+        <DialogTitle id="draggable-dialog-title" component="span">
           Youtube video
           {handleClose ? (
             <IconButton
@@ -62,8 +64,8 @@ const YoutubeVideo = (props) => {
             </IconButton>
           ) : null}
         </DialogTitle>
-        <DialogContent>
-          <DialogContentText>
+        <DialogContent component="span">
+          <DialogContentText component="span">
             <YouTube videoId={youtubeURL} opts={opts} />
           </DialogContentText>
         </DialogContent>

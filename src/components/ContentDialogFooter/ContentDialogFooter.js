@@ -20,16 +20,18 @@ const ContentDialogFooter = (props) => {
       >
         Watch trailer
       </Button>
-      <Button
-        className={Styles.buttons}
-        variant="contained"
-        color="error"
-        startIcon={<PageviewIcon />}
-        target="_blank"
-        href={openContentHomepage}
-      >
-        {media_type === "tv" ? "Series" : "movie"} homepage
-      </Button>
+      {openContentHomepage && (
+        <Button
+          className={Styles.buttons}
+          variant="contained"
+          color="error"
+          startIcon={<PageviewIcon />}
+          target="_blank"
+          href={openContentHomepage}
+        >
+          {media_type === "tv" ? "Series" : "movie"} homepage
+        </Button>
+      )}
       <Button
         className={Styles.buttons}
         color="inherit"

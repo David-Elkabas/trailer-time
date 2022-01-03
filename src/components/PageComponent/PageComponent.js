@@ -4,9 +4,28 @@ import PageNumber from "../../components/PageNumber/PageNumber";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import Styles from "./PageComponent.module.css";
 import axios from "axios";
+import { TextField } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#f29200",
+    },
+
+    text: {
+      primary: "#f29200",
+      secondary: "#46505A",
+    },
+    action: {
+      active: "#001E3C",
+    },
+  },
+});
 
 const PageComponent = (props) => {
   const { pageName, pageTitle } = props;
+
   const [contents, setContents] = useState([]);
   const [numberOfPages, setNumberOfPages] = useState();
   const [page, setPage] = useState(1);
@@ -14,6 +33,15 @@ const PageComponent = (props) => {
     genresArray: [],
     selectedGenres: [],
   });
+  const [searchText, setSearchText] = useState("");
+  // const [lastSearchText, setLastSearchText] = useState("");
+  const [openSearch, setOpenSearch] = useState("true");
+  const [openGenres, setOpenGenres] = useState("true");
+
+  const searchContent = (value) => {
+    setSearchText(value);
+    setPage(1);
+  };
 
   useEffect(() => {
     const getGenreForURL = () => {
@@ -33,21 +61,63 @@ const PageComponent = (props) => {
       setContents(data.results);
       setNumberOfPages(data.total_pages);
     };
+    const fetchSearch = async () => {
+      try {
+        const { data } = await axios.get(
+          `https://api.themoviedb.org/3/search/${pageName}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_video=false&page=${page}&query=${searchText}&include_adult=false`
+        );
+        setContents(data.results);
+        setNumberOfPages(data.total_pages);
+        // console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
     const genresForURL = getGenreForURL();
-    fetchPageData(genresForURL);
-  }, [page, genres.selectedGenres, pageName]);
+    if (searchText.length !== 0) {
+      setOpenSearch(true);
+      setOpenGenres(false);
+      fetchSearch();
+    } else if (genres.selectedGenres.length !== 0) {
+      fetchPageData(genresForURL);
+      setOpenGenres(true);
+      setOpenSearch(false);
+    } else {
+      fetchPageData(genresForURL);
+      setOpenSearch(true);
+      setOpenGenres(true);
+      // setPage(1);
+    }
+  }, [page, genres.selectedGenres, pageName, searchText]);
 
   return (
     <div>
       <h1 className="pageHeading">{pageTitle}</h1>
-      <div>
-        <Genres
-          type={pageName}
-          setPage={setPage}
-          genres={genres}
-          setGenres={setGenres}
-        />
-      </div>
+      <ThemeProvider theme={theme}>
+        {openSearch && (
+          <div className={Styles.textField}>
+            <TextField
+              id="outlined-basic"
+              color="primary"
+              label="Search"
+              variant="outlined"
+              sx={{ color: "text.primary" }}
+              focused
+              onChange={(e) => searchContent(e.target.value)}
+            />
+          </div>
+        )}
+      </ThemeProvider>
+      {openGenres && (
+        <div className={Styles.genres}>
+          <Genres
+            type={pageName}
+            setPage={setPage}
+            genres={genres}
+            setGenres={setGenres}
+          />
+        </div>
+      )}
       {numberOfPages > 1 && (
         <PageNumber
           setPage={setPage}

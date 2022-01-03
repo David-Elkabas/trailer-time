@@ -3,3 +3,11 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+.genres {
+  display: flex;
+  justify-content: center;
+}
+.textField {
+  display: flex;
+  justify-content: center;
+}

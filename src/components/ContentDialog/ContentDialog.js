@@ -54,8 +54,9 @@ const ContentDialog = (props) => {
         onClose={handleClose}
         PaperComponent={PaperComponent}
         aria-labelledby="draggable-dialog-title"
+        component="span"
       >
-        <DialogTitle id="draggable-dialog-title">
+        <DialogTitle id="draggable-dialog-title" component="span">
           {content && (
             <DialogTitleComp
               contentName={content.name || content.title}
@@ -65,7 +66,7 @@ const ContentDialog = (props) => {
           )}
         </DialogTitle>
         <DialogContent>
-          <DialogContentText>
+          <DialogContentText component="span">
             {content && (
               <ContentDialogBody
                 tagline={content.tagline || "no tagline was given"}
@@ -77,6 +78,7 @@ const ContentDialog = (props) => {
           </DialogContentText>
         </DialogContent>
         <DialogActions
+          component="span"
           sx={{
             display: "flex",
             justifyContent: "center",

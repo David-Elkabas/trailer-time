@@ -58,7 +58,7 @@ const Genres = (props) => {
           <Chip
             key={genre.id}
             label={genre.name}
-            sx={{ background: "rgb(240, 181, 34)", margin: "3px" }}
+            sx={{ background: "#f29200", margin: "3px" }}
             clickable
             onClick={() => clickOnGenresArray(genre)}
           />
