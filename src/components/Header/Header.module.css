@@ -13,9 +13,7 @@
   box-shadow: 0px 20px 30px black;
   align-items: center;
 }
-.title {
-  /* text-align: center; */
-}
+
 .movieImage {
   padding: 3px;
   height: 5rem;

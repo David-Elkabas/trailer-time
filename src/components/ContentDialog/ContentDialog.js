@@ -25,7 +25,6 @@ function PaperComponent(props) {
 const ContentDialog = (props) => {
   const { open, handleClose, id, media_type, openYoutubeVideo } = props;
   const [content, setContent] = useState();
-  const [video, setVideo] = useState();
 
   useEffect(() => {
     const fetchContentData = async () => {
@@ -36,15 +35,7 @@ const ContentDialog = (props) => {
       // console.log(data);
     };
 
-    const fetchContentVideo = async () => {
-      const { data } = await axios.get(
-        `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
-      );
-      setVideo(data.results[0]?.key);
-    };
-
     fetchContentData();
-    fetchContentVideo();
   }, [media_type, id]);
 
   return (

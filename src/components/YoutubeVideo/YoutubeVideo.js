@@ -7,7 +7,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Paper from "@mui/material/Paper";
 import Draggable from "react-draggable";
 import YouTube from "react-youtube";
-import Styles from "./YoutubeVideo.module.css";
+
 function PaperComponent(props) {
   return (
     <Draggable
