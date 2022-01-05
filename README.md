@@ -1,9 +1,9 @@
 # Trailer - Time
 
-## Demo
-  will come sortly
+## 👾Demo
+  https://trailer-time.netlify.app/
 
-## about
+## 🎯about
 This project is a simplified front end clone of some movie webside (like Netflix/Hulu/Amazon Prime Video/Pureflix). It was created with React and MUI. It uses The MovieDB Api to search for movies and display details. Feel free to contribute!
 
 ### `npm start`
