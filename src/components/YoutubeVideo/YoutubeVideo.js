@@ -4,20 +4,7 @@ import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import Paper from "@mui/material/Paper";
-import Draggable from "react-draggable";
 import YouTube from "react-youtube";
-
-function PaperComponent(props) {
-  return (
-    <Draggable
-      handle="#draggable-dialog-title"
-      cancel={'[class*="MuiDialogContent-root"]'}
-    >
-      <Paper {...props} />
-    </Draggable>
-  );
-}
 
 const YoutubeVideo = (props) => {
   const { open, handleClose, youtubeURL } = props;
@@ -44,7 +31,6 @@ const YoutubeVideo = (props) => {
             maxHeight: 600,
           },
         }}
-        PaperComponent={PaperComponent}
         aria-labelledby="draggable-dialog-title"
       >
         <DialogTitle id="draggable-dialog-title" component="span">

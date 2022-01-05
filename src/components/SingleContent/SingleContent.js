@@ -25,7 +25,7 @@ const SingleContent = (props) => {
   const openYoutubeVideo = () => {
     setIsDialogOpen(false);
     setIsYoutubeDialogOpen(true);
-    console.log(youtubeURL);
+    // console.log(youtubeURL);
   };
 
   useEffect(() => {
