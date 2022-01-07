@@ -14,8 +14,8 @@ This project is a simplified front end clone of some movie webside (like Netflix
 ## view in phone 
 
 <p align="middle">
-  <img src="https://github.com/David-Elkabas/trailer-time/blob/master/pictures%20%26%20gifs/phone-image1.png" width="45%" />
-  <img src="https://github.com/David-Elkabas/trailer-time/blob/master/pictures%20%26%20gifs/phone-image2.png" width="45%" /> 
+  <img src="https://github.com/David-Elkabas/trailer-time/blob/master/pictures%20%26%20gifs/phone-image1.png" width="30%" />
+  <img src="https://github.com/David-Elkabas/trailer-time/blob/master/pictures%20%26%20gifs/phone-image2.png" width="30%" /> 
 </p>
 
 ### `npm start`
