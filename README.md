@@ -18,9 +18,29 @@ This project is a simplified front end clone of some movie webside (like Netflix
   <img src="https://github.com/David-Elkabas/trailer-time/blob/master/pictures%20%26%20gifs/phone-image2.png" width="30%" /> 
 </p>
 
-### `npm start`
+## 🛠️ Execution:
+-	Clone this repository using
+```
+git clone https://github.com/dhhruv/Sudoku-Solver.git
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🧠 Build Setup  
+```
+npm install
+```
 
-Click ⭐ if you like the project. Pull Request are highly appreciated ❤️
+### ✅ Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### ✅ Compiles and minifies for production
+```
+npm run build
+```
+
+## 👀 License
+
+MIT
+
+## Click ⭐ if you like the project. Pull Request are highly appreciated ❤️
