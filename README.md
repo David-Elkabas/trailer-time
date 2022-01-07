@@ -12,11 +12,10 @@ This project is a simplified front end clone of some movie webside (like Netflix
 </p>
 
 ## view in phone 
-<p" align="center">
+
   <img src="https://github.com/David-Elkabas/trailer-time/blob/master/pictures%20%26%20gifs/phone-image1.png" width="45%" />
   <img src="https://github.com/David-Elkabas/trailer-time/blob/master/pictures%20%26%20gifs/phone-image2.png" width="45%" /> 
 
-</p>
 ### `npm start`
 
 Runs the app in the development mode.\
