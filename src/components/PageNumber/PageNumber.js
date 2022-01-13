@@ -1,5 +1,6 @@
 import Pagination from "@mui/material/Pagination";
 import Styles from "./pageNumber.module.css";
+import MediaQuery from "react-responsive";
 
 const PageNumber = (props) => {
   const { setPage, pageNumber, numberOfPages } = props;
@@ -8,15 +9,30 @@ const PageNumber = (props) => {
     setPage(value);
   };
   return (
-    <div className={Styles.pageNumber}>
-      <Pagination
-        page={pageNumber}
-        count={numberOfPages}
-        color="primary"
-        sx={{ background: "white", borderRadius: "50px" }}
-        onChange={changePage}
-      />
-    </div>
+    <>
+      <div className={Styles.pageNumber}>
+        <div style={{ color: "white" }}></div>
+        <MediaQuery maxWidth={500}>
+          <Pagination
+            size="small"
+            page={pageNumber}
+            count={numberOfPages}
+            color="primary"
+            sx={{ background: "white", borderRadius: "50px" }}
+            onChange={changePage}
+          />
+        </MediaQuery>
+        <MediaQuery minWidth={501}>
+          <Pagination
+            page={pageNumber}
+            count={numberOfPages}
+            color="primary"
+            sx={{ background: "white", borderRadius: "50px" }}
+            onChange={changePage}
+          />
+        </MediaQuery>
+      </div>
+    </>
   );
 };
 

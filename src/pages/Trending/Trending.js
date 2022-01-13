@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import PageNumber from "../../components/PageNumber/PageNumber";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import Style from "./Trending.module.css";
+
 const Trending = () => {
   const [contents, setContents] = useState([]);
   const [page, setPage] = useState(1);
@@ -20,6 +21,7 @@ const Trending = () => {
   return (
     <div>
       <h1 className="pageHeading">Trending</h1>
+
       <PageNumber setPage={setPage} pageNumber={page} numberOfPages={10} />
 
       <div className={Style.trending}>

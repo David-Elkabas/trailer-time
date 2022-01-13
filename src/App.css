@@ -4,12 +4,9 @@
 }
 .app {
   min-height: 100vh;
-  background-color: black;
-  /* background-image: linear-gradient(
-    to bottom,
-    rgb(228, 0, 11),
-    rgb(44, 58, 255)
-  ); */
+  background-color: #000000;
+  padding-right: 15px;
+  padding-left: 15px;
   color: #f29200;
   padding-top: 40px;
 }
@@ -17,7 +14,7 @@
   display: flex;
   justify-content: center;
   font-size: 4vw;
-  padding: 5px;
+  /* padding: 5px; */
   padding-bottom: 20px;
   font-weight: 700;
   border-radius: 50px;
